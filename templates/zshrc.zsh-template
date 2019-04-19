@@ -79,9 +79,12 @@ source $ZSH/oh-my-zsh.sh
 # git clone git@github.com:skywind3000/z.lua.git ~/.z.lua
 eval "$(lua /home/luofl/.z.lua/z.lua --init zsh once enhanced)"
 export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json,.vscode"
+export PATH=~/anaconda3/bin:$PATH
 
- #export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="/usr/local/man:$MANPATH"
 export LD_LIBRARY_PATH=.:./bin
+
+export SCREENDIR=$HOME/.screen
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -108,10 +111,15 @@ alias gitc="git commit -m"
 alias gitl="git lg"
 alias gitpl="git pull"
 alias gitps="git push"
+alias gitps-review="git push origin HEAD:refs/for/usr/k/refactor%r=fengweilun03@kuaishou.com,r=gujiawen@kuaishou.com,r=luofalei@kuaishou.com"
+alias mk="make"
+alias mkj="make -j4"
+alias mkc="make clean"
+alias mkdc="make distclean"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zc='z -c'      # 严格匹配当前路径的子路径
-alias zz='z -i'      # 使用交互式选择模式
-alias zf='z -I'      # 使用 fzf 对多个结果进行选择
-alias zb='z -b'      # 快速回到父目录
+alias zc='z -c'
+alias zz='z -i'
+alias zf='z -I'
+alias zb='z -b'
 
