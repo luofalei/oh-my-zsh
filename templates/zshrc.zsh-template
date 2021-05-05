@@ -76,8 +76,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# git clone git@github.com:skywind3000/z.lua.git ~/.z.lua
+eval "$(lua /home/luofl/.z.lua/z.lua --init zsh once enhanced)"
+export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json,.vscode"
 
-# export MANPATH="/usr/local/man:$MANPATH"
+ #export MANPATH="/usr/local/man:$MANPATH"
 export LD_LIBRARY_PATH=.:./bin
 
 # You may need to manually set your language environment
@@ -107,3 +110,8 @@ alias gitpl="git pull"
 alias gitps="git push"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zc='z -c'      # 严格匹配当前路径的子路径
+alias zz='z -i'      # 使用交互式选择模式
+alias zf='z -I'      # 使用 fzf 对多个结果进行选择
+alias zb='z -b'      # 快速回到父目录
+
